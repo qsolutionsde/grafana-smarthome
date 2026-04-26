@@ -373,7 +373,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "power{device=\"pv_battery\"}   ",
+                        "expr": "power{device=\"pv_battery\"}",
                         "format": "time_series",
                         "legendFormat": "__auto",
                         "range": true
@@ -616,12 +616,12 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-4"
+                "name": "panel-5"
               },
-              "height": 11,
-              "width": 24,
-              "x": 0,
-              "y": 4
+              "height": 4,
+              "width": 4,
+              "x": 12,
+              "y": 0
             }
           },
           {
@@ -629,12 +629,12 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-5"
+                "name": "panel-4"
               },
-              "height": 8,
-              "width": 12,
+              "height": 11,
+              "width": 24,
               "x": 0,
-              "y": 15
+              "y": 4
             }
           }
         ]
