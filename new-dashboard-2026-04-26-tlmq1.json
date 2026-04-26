@@ -127,6 +127,108 @@
             "version": "13.0.1"
           }
         }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "power{device=\"pv_ac\"}",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 2,
+          "links": [],
+          "title": "Erzeugung",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-purple",
+                        "value": 0
+                      },
+                      {
+                        "color": "dark-blue",
+                        "value": 50
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 100
+                      },
+                      {
+                        "color": "super-light-green",
+                        "value": 500
+                      },
+                      {
+                        "color": "semi-dark-green",
+                        "value": 1000
+                      },
+                      {
+                        "color": "dark-green",
+                        "value": 2000
+                      }
+                    ]
+                  },
+                  "unit": "watt"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "13.0.1"
+          }
+        }
       }
     },
     "layout": {
@@ -140,9 +242,22 @@
                 "kind": "ElementReference",
                 "name": "panel-1"
               },
-              "height": 8,
-              "width": 12,
+              "height": 4,
+              "width": 4,
               "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-2"
+              },
+              "height": 6,
+              "width": 20,
+              "x": 4,
               "y": 0
             }
           }
