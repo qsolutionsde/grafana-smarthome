@@ -411,14 +411,14 @@
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
                     "fillOpacity": 25,
-                    "gradientMode": "none",
+                    "gradientMode": "opacity",
                     "hideFrom": {
                       "legend": false,
                       "tooltip": false,
                       "viz": false
                     },
                     "insertNulls": false,
-                    "lineInterpolation": "linear",
+                    "lineInterpolation": "smooth",
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
@@ -429,7 +429,7 @@
                     "spanNulls": false,
                     "stacking": {
                       "group": "A",
-                      "mode": "normal"
+                      "mode": "none"
                     },
                     "thresholdsStyle": {
                       "mode": "off"
@@ -447,7 +447,8 @@
                         "value": 80
                       }
                     ]
-                  }
+                  },
+                  "unit": "watt"
                 },
                 "overrides": []
               },
