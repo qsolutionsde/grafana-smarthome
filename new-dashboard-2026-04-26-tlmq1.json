@@ -880,7 +880,7 @@
                         "editorMode": "code",
                         "expr": "temperature{device=\"pv_inverter\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Wechselrichter",
                         "range": true
                       },
                       "version": "v0"
@@ -902,7 +902,7 @@
                         "editorMode": "code",
                         "expr": "temperature{device=\"pv_battery\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Speicher",
                         "range": true
                       },
                       "version": "v0"
