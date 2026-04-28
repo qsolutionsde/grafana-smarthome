@@ -382,6 +382,28 @@
                     },
                     "refId": "Speicher"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "power{device=\"pv_grid\"}",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
                 }
               ],
               "queryOptions": {},
@@ -591,7 +613,7 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-2"
+                "name": "panel-5"
               },
               "height": 4,
               "width": 4,
@@ -604,7 +626,7 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-3"
+                "name": "panel-2"
               },
               "height": 4,
               "width": 4,
@@ -617,7 +639,7 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-5"
+                "name": "panel-3"
               },
               "height": 4,
               "width": 4,
