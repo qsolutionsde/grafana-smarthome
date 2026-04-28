@@ -165,7 +165,7 @@
           "description": "",
           "id": 2,
           "links": [],
-          "title": "Erzeugung",
+          "title": "Last",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
@@ -533,7 +533,7 @@
           "description": "",
           "id": 5,
           "links": [],
-          "title": "Batterie",
+          "title": "Speicher laden",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
@@ -808,8 +808,8 @@
                 "kind": "ElementReference",
                 "name": "panel-6"
               },
-              "height": 8,
-              "width": 12,
+              "height": 9,
+              "width": 24,
               "x": 0,
               "y": 15
             }
