@@ -404,6 +404,28 @@
                     },
                     "refId": "A"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "energy.electric{device=\"powermeter_internal\"}",
+                        "format": "time_series",
+                        "legendFormat": "Last",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
                 }
               ],
               "queryOptions": {},
@@ -1139,6 +1161,19 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
+                "name": "panel-9"
+              },
+              "height": 4,
+              "width": 4,
+              "x": 20,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
                 "name": "panel-4"
               },
               "height": 11,
@@ -1170,19 +1205,6 @@
               "height": 8,
               "width": 12,
               "x": 0,
-              "y": 24
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-9"
-              },
-              "height": 8,
-              "width": 12,
-              "x": 12,
               "y": 24
             }
           }
