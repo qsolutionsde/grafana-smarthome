@@ -668,7 +668,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 0,
+                    "fillOpacity": 7,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -676,7 +676,7 @@
                       "viz": false
                     },
                     "insertNulls": false,
-                    "lineInterpolation": "linear",
+                    "lineInterpolation": "smooth",
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
@@ -873,7 +873,7 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-2"
+                "name": "panel-7"
               },
               "height": 4,
               "width": 4,
@@ -886,11 +886,24 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-3"
+                "name": "panel-2"
               },
               "height": 4,
               "width": 4,
               "x": 12,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-3"
+              },
+              "height": 4,
+              "width": 4,
+              "x": 16,
               "y": 0
             }
           },
@@ -918,19 +931,6 @@
               "width": 24,
               "x": 0,
               "y": 15
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-7"
-              },
-              "height": 8,
-              "width": 12,
-              "x": 0,
-              "y": 24
             }
           }
         ]
