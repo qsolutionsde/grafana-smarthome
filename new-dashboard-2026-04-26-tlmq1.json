@@ -353,7 +353,7 @@
                         "editorMode": "code",
                         "expr": "power{device=\"pv_ac\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Abgabe AC",
                         "range": true
                       },
                       "version": "v0"
@@ -375,7 +375,7 @@
                         "editorMode": "code",
                         "expr": "power{device=\"pv_battery\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Batterie",
                         "range": true
                       },
                       "version": "v0"
@@ -397,7 +397,7 @@
                         "editorMode": "code",
                         "expr": "power{device=\"pv_grid\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Netz",
                         "range": true
                       },
                       "version": "v0"
@@ -976,10 +976,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-24h",
+      "from": "2026-04-27T21:52:28.965Z",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "now"
+      "to": "2026-04-27T22:21:22.439Z"
     },
     "title": "Solar",
     "variables": []
