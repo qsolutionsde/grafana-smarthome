@@ -649,7 +649,7 @@
           "description": "",
           "id": 6,
           "links": [],
-          "title": "New panel",
+          "title": "Panels (DC)",
           "vizConfig": {
             "group": "timeseries",
             "kind": "VizConfig",
