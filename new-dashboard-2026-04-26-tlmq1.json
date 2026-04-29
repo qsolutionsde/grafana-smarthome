@@ -681,7 +681,7 @@
           "description": "",
           "id": 5,
           "links": [],
-          "title": "Speicher laden",
+          "title": "Speicher entladen",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
