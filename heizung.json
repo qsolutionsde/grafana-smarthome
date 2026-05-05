@@ -56,12 +56,34 @@
                         "editorMode": "builder",
                         "expr": "temperature{device=\"room_1W\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Wohnzimmer",
                         "range": true
                       },
                       "version": "v0"
                     },
                     "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "builder",
+                        "expr": "temperature{device=\"room_2S\"}",
+                        "format": "time_series",
+                        "legendFormat": "Schlafzimmer",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
                   }
                 }
               ],
@@ -154,10 +176,6 @@
                           "fixedColor": "light-green",
                           "mode": "fixed"
                         }
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Schlafzimmer"
                       }
                     ]
                   },
@@ -170,10 +188,6 @@
                       {
                         "id": "custom.fillOpacity",
                         "value": 0
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Wohnzimmer"
                       },
                       {
                         "id": "color",
@@ -193,10 +207,6 @@
                       {
                         "id": "custom.fillOpacity",
                         "value": 0
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Arbeitszimmer"
                       },
                       {
                         "id": "color",
@@ -223,10 +233,6 @@
                           "fixedColor": "orange",
                           "mode": "fixed"
                         }
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Außen (mittel)"
                       }
                     ]
                   },
@@ -239,17 +245,6 @@
                       {
                         "id": "custom.fillOpacity",
                         "value": 0
-                      },
-                      {
-                        "id": "color",
-                        "value": {
-                          "fixedColor": "red",
-                          "mode": "fixed"
-                        }
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Außen (max)"
                       }
                     ]
                   },
@@ -260,19 +255,11 @@
                     },
                     "properties": [
                       {
-                        "id": "custom.fillOpacity",
-                        "value": 0
-                      },
-                      {
                         "id": "color",
                         "value": {
                           "fixedColor": "blue",
                           "mode": "fixed"
                         }
-                      },
-                      {
-                        "id": "displayName",
-                        "value": "Außen (min)"
                       }
                     ]
                   }
