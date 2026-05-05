@@ -85,6 +85,118 @@
                     },
                     "refId": "B"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "min_over_time(temperature{device=\"room_00\"})[1d]",
+                        "format": "time_series",
+                        "instant": false,
+                        "legendFormat": "Außentemperatur (min)",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max_over_time(temperature{device=\"room_00\"})[1d]",
+                        "format": "time_series",
+                        "legendFormat": "Außentemperatur (max.)",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "avg_over_time(temperature{device=\"room_00\"})[1d]",
+                        "format": "time_series",
+                        "legendFormat": "Außentemperatur",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "E"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "temperature{device=\"room_0A\"}",
+                        "format": "time_series",
+                        "legendFormat": "Arbeitszimmer",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "F"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "temperature{device=\"room_2B\"}",
+                        "format": "time_series",
+                        "legendFormat": "Bad",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "G"
+                  }
                 }
               ],
               "queryOptions": {
@@ -142,7 +254,7 @@
                     }
                   },
                   "displayName": "${__series.name}",
-                  "max": 45,
+                  "max": 40,
                   "min": -10,
                   "thresholds": {
                     "mode": "absolute",
@@ -182,7 +294,7 @@
                   {
                     "matcher": {
                       "id": "byFrameRefID",
-                      "options": "C"
+                      "options": "F"
                     },
                     "properties": [
                       {
@@ -201,7 +313,7 @@
                   {
                     "matcher": {
                       "id": "byFrameRefID",
-                      "options": "D"
+                      "options": "G"
                     },
                     "properties": [
                       {
@@ -220,7 +332,7 @@
                   {
                     "matcher": {
                       "id": "byFrameRefID",
-                      "options": "E"
+                      "options": "D"
                     },
                     "properties": [
                       {
@@ -251,7 +363,7 @@
                   {
                     "matcher": {
                       "id": "byFrameRefID",
-                      "options": "F"
+                      "options": "C"
                     },
                     "properties": [
                       {
@@ -260,6 +372,10 @@
                           "fixedColor": "blue",
                           "mode": "fixed"
                         }
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
                       }
                     ]
                   }
