@@ -1941,104 +1941,20 @@
                     "hidden": false,
                     "query": {
                       "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
+                        "name": "af0u89hxotp1cf"
                       },
-                      "group": "influxdb",
+                      "group": "victoriametrics-metrics-datasource",
                       "kind": "DataQuery",
                       "spec": {
-                        "alias": "Gasverbrauch",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\n|\u003e filter(fn: (r) =\u003e r._measurement == \"energy.gas\" and r.device == \"gasmeter\")\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\n|\u003e aggregateWindow(every: v.windowPeriod, fn: max)\n|\u003e difference()\n|\u003e yield(name: \"Gasverbrauch\")\n",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
+                        "editorMode": "code",
+                        "expr": "increase(energy.gas)",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
                       },
                       "version": "v0"
                     },
                     "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Warmwasser",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"energy.gas.water\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: max)\r\n|\u003e difference()\r\n|\u003e yield(name: \"Gasverbrauch Warmwasser\")\r\n",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
                   }
                 }
               ],
