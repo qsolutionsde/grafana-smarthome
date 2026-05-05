@@ -2640,46 +2640,16 @@
                     "hidden": false,
                     "query": {
                       "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
+                        "name": "af0u89hxotp1cf"
                       },
-                      "group": "influxdb",
+                      "group": "victoriametrics-metrics-datasource",
                       "kind": "DataQuery",
                       "spec": {
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\n|\u003e filter(fn: (r) =\u003e r._measurement == \"precipitation_hour\" and r.device == \"room_00\")\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\n|\u003e yield(name: \"Niederschlag\")\n",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
+                        "editorMode": "code",
+                        "expr": "sum_over_time(precipitation{device=\"room_00\"})[1d]",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
                       },
                       "version": "v0"
                     },
@@ -2884,7 +2854,10 @@
                   "col": 2,
                   "inverted": false
                 },
-                "xAxisExtents": {},
+                "xAxisExtents": {
+                  "max": null,
+                  "min": null
+                },
                 "xAxisTitle": {
                   "color": "white",
                   "fontColor": "white",
@@ -2898,7 +2871,10 @@
                   "lower": 30,
                   "upper": 10
                 },
-                "yAxisExtents": {},
+                "yAxisExtents": {
+                  "max": null,
+                  "min": null
+                },
                 "yAxisTitle": {
                   "color": "#777",
                   "fontColor": "white",
