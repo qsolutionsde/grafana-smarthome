@@ -619,12 +619,16 @@
                     "hidden": false,
                     "query": {
                       "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
+                        "name": "af0u89hxotp1cf"
                       },
-                      "group": "influxdb",
+                      "group": "victoriametrics-metrics-datasource",
                       "kind": "DataQuery",
                       "spec": {
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.water\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: 1h, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Warmwassertemperatur\")\r\n\r\n"
+                        "editorMode": "builder",
+                        "expr": "temperature.water{device=\"heating\"}",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
                       },
                       "version": "v0"
                     },
@@ -3080,10 +3084,7 @@
                   "col": 2,
                   "inverted": false
                 },
-                "xAxisExtents": {
-                  "max": null,
-                  "min": null
-                },
+                "xAxisExtents": {},
                 "xAxisTitle": {
                   "color": "white",
                   "fontColor": "white",
@@ -3097,10 +3098,7 @@
                   "lower": 30,
                   "upper": 10
                 },
-                "yAxisExtents": {
-                  "max": null,
-                  "min": null
-                },
+                "yAxisExtents": {},
                 "yAxisTitle": {
                   "color": "#777",
                   "fontColor": "white",
@@ -3273,7 +3271,20 @@
         ]
       }
     },
-    "links": [],
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": true,
+        "title": "Source (GitHub)",
+        "tooltip": "View source file in repository",
+        "type": "link",
+        "url": "https://github.com/qsolutionsde/grafana-smarthome/blob/main/heizung.json"
+      }
+    ],
     "liveNow": false,
     "preload": false,
     "tags": [],
