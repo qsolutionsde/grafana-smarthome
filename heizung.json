@@ -494,6 +494,58 @@
           }
         }
       },
+      "panel-12": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "builder",
+                        "expr": "volume.gas",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 12,
+          "links": [],
+          "title": "New panel",
+          "vizConfig": {
+            "group": "__unconfigured-panel",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {}
+            },
+            "version": "13.0.1"
+          }
+        }
+      },
       "panel-2": {
         "kind": "Panel",
         "spec": {
@@ -2770,10 +2822,7 @@
                   "col": 2,
                   "inverted": false
                 },
-                "xAxisExtents": {
-                  "max": null,
-                  "min": null
-                },
+                "xAxisExtents": {},
                 "xAxisTitle": {
                   "color": "white",
                   "fontColor": "white",
@@ -2787,10 +2836,7 @@
                   "lower": 30,
                   "upper": 10
                 },
-                "yAxisExtents": {
-                  "max": null,
-                  "min": null
-                },
+                "yAxisExtents": {},
                 "yAxisTitle": {
                   "color": "#777",
                   "fontColor": "white",
@@ -2833,6 +2879,19 @@
                         "height": 4,
                         "width": 2,
                         "x": 0,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-12"
+                        },
+                        "height": 6,
+                        "width": 22,
+                        "x": 2,
                         "y": 0
                       }
                     }
