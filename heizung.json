@@ -1245,421 +1245,64 @@
                     "hidden": false,
                     "query": {
                       "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
+                        "name": "af0u89hxotp1cf"
                       },
-                      "group": "influxdb",
+                      "group": "victoriametrics-metrics-datasource",
                       "kind": "DataQuery",
                       "spec": {
-                        "alias": "Warmwasser",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.water\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Warmwassertemperatur\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
+                        "editorMode": "code",
+                        "expr": "temperature.water{device=\"heating\"}",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Warmwassertemperatur"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "temperature.supply.floor",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Fußboden"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "temperature.supply.radiator",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
                       },
                       "version": "v0"
                     },
                     "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Vorlauf (HK)",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.supply.radiator\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Heizkörper Vorlauf\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Vorlauf (FB)",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.supply.floor\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Fußbodenheizung Vorlauf\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "C"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Rücklauf",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.return\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Rücklauf\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "HK",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"pumpModulation.radiator\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Heizkörper Pumpenodulation\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "last"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "E"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "FBH",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"pumpModulation.floor\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Fußbodenheizung Pumpenodulation\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "F"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Leistung",
-                        "dsType": "influxdb",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "previous"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "measurement": "power.heating",
-                        "orderByTime": "ASC",
-                        "policy": "forever",
-                        "query": "from(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"power.heating\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e aggregateWindow(every: v.windowPeriod, fn: mean)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Leistung\")",
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "G"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "b4d0be34-c806-4377-9f70-7c1170074e67"
-                      },
-                      "group": "influxdb",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "alias": "Temperature Water (Derivative)",
-                        "groupBy": [
-                          {
-                            "params": [
-                              "$__interval"
-                            ],
-                            "type": "time"
-                          },
-                          {
-                            "params": [
-                              "null"
-                            ],
-                            "type": "fill"
-                          }
-                        ],
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "query": "import \"experimental/aggregate\"\r\nfrom(bucket: v.defaultBucket)\r\n|\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n|\u003e filter(fn: (r) =\u003e r._measurement == \"temperature.water\" and r.device == \"heating\")\r\n|\u003e keep(columns: [\"_time\", \"_value\", \"_measurement\"])\r\n|\u003e sort(columns: [\"_time\"])\r\n|\u003e aggregate.rate(every: v.windowPeriod, unit: 1h)\r\n|\u003e fill(usePrevious: true)\r\n|\u003e yield(name: \"Warmwassertemperatur Änderung\")",
-                        "rawQuery": true,
-                        "resultFormat": "time_series",
-                        "select": [
-                          [
-                            {
-                              "params": [
-                                "value"
-                              ],
-                              "type": "field"
-                            },
-                            {
-                              "params": [],
-                              "type": "mean"
-                            }
-                          ]
-                        ],
-                        "tags": []
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "H"
                   }
                 }
               ],
