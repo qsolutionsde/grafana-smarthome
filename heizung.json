@@ -1302,7 +1302,29 @@
                       },
                       "version": "v0"
                     },
-                    "refId": "A"
+                    "refId": "Heizkörper"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "temperature.return",
+                        "format": "time_series",
+                        "legendFormat": "__auto",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Rücklauf"
                   }
                 }
               ],
@@ -1374,7 +1396,8 @@
                   {
                     "matcher": {
                       "id": "byName",
-                      "options": "temperature.supply.radiator"
+                      "options": "temperature.supply.radiator{device=\"heating\"}",
+                      "scope": "series"
                     },
                     "properties": [
                       {
