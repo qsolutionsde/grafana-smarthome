@@ -1253,7 +1253,7 @@
                         "editorMode": "code",
                         "expr": "temperature.water{device=\"heating\"}",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "WW",
                         "range": true
                       },
                       "version": "v0"
@@ -1275,7 +1275,7 @@
                         "editorMode": "code",
                         "expr": "temperature.supply.floor",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "FBH",
                         "range": true
                       },
                       "version": "v0"
@@ -1297,7 +1297,7 @@
                         "editorMode": "code",
                         "expr": "temperature.supply.radiator",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "HK",
                         "range": true
                       },
                       "version": "v0"
@@ -1319,12 +1319,34 @@
                         "editorMode": "code",
                         "expr": "temperature.return",
                         "format": "time_series",
-                        "legendFormat": "__auto",
+                        "legendFormat": "Rücklauf",
                         "range": true
                       },
                       "version": "v0"
                     },
                     "refId": "Rücklauf"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af0u89hxotp1cf"
+                      },
+                      "group": "victoriametrics-metrics-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "power.heating",
+                        "format": "time_series",
+                        "legendFormat": "Leistung",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
                   }
                 }
               ],
@@ -1420,7 +1442,8 @@
                   {
                     "matcher": {
                       "id": "byName",
-                      "options": "temperature.return"
+                      "options": "Rücklauf",
+                      "scope": "series"
                     },
                     "properties": [
                       {
@@ -1447,7 +1470,8 @@
                   {
                     "matcher": {
                       "id": "byName",
-                      "options": "power.heating"
+                      "options": "Leistung",
+                      "scope": "series"
                     },
                     "properties": [
                       {
@@ -1494,7 +1518,8 @@
                   {
                     "matcher": {
                       "id": "byName",
-                      "options": "temperature.supply.floor"
+                      "options": "FBH",
+                      "scope": "series"
                     },
                     "properties": [
                       {
@@ -1533,7 +1558,7 @@
                   {
                     "matcher": {
                       "id": "byFrameRefID",
-                      "options": "A"
+                      "options": "Warmwassertemperatur"
                     },
                     "properties": [
                       {
@@ -1606,7 +1631,8 @@
                   {
                     "matcher": {
                       "id": "byName",
-                      "options": "Rücklauf"
+                      "options": "Rücklauf",
+                      "scope": "series"
                     },
                     "properties": [
                       {
