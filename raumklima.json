@@ -54,7 +54,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "mold-risk{device=\"${room}\"}",
+                        "expr": "{__name__=\"mold-risk\",device=\"${room}\"}",
                         "format": "time_series",
                         "legendFormat": "__auto",
                         "range": true
@@ -645,7 +645,20 @@
         ]
       }
     },
-    "links": [],
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": true,
+        "title": "Source (GitHub)",
+        "tooltip": "View source file in repository",
+        "type": "link",
+        "url": "https://github.com/qsolutionsde/grafana-smarthome/blob/main/raumklima.json"
+      }
+    ],
     "liveNow": false,
     "preload": false,
     "tags": [],
