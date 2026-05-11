@@ -452,7 +452,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "mold-risk{device=\"${room}\"}",
+                        "expr": "{__name__=\"mold-risk\",device=\"${room}\"}",
                         "format": "time_series",
                         "legendFormat": "__auto",
                         "range": true
@@ -615,7 +615,7 @@
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "AutoGridLayout",
                 "spec": {
