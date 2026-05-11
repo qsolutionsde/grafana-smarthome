@@ -396,8 +396,16 @@
                         "value": 0
                       },
                       {
+                        "color": "yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "orange",
+                        "value": 2
+                      },
+                      {
                         "color": "red",
-                        "value": 80
+                        "value": 3
                       }
                     ]
                   }
