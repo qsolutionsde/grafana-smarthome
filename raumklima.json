@@ -557,7 +557,7 @@
       "timezone": "browser",
       "to": "now"
     },
-    "title": "Raumklima Copy",
+    "title": "Raumklima",
     "variables": [
       {
         "kind": "CustomVariable",
