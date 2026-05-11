@@ -452,10 +452,11 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "{__name__=\"mold-risk\",device=\"${room}\"}",
+                        "expr": "{__name__=\"mold-risk\",device=\"${room:text}\"}",
                         "format": "time_series",
                         "legendFormat": "__auto",
-                        "range": true
+                        "range": true,
+                        "trace": 1
                       },
                       "version": "v0"
                     },
