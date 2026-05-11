@@ -378,7 +378,7 @@
           "description": "",
           "id": 33,
           "links": [],
-          "title": "${room:text}",
+          "title": "${room:value}",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
